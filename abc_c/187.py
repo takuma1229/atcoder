@@ -1,6 +1,12 @@
 n = int(input())
-li = []
+dic = set(input() for i in range(n))
 
-for i in range(n):
-  li.append(input())
+for s in dic:
+  if "!" + s in dic:
+    print(s)
+    exit()
 
+print("satisfiable")
+
+#ユニークなリストではなく、ユニークな辞書を作る。
+#辞書でin演算すると計算量がO(1)になる
