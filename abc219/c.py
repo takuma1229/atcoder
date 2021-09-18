@@ -23,4 +23,4 @@ for i in range(len(num_name_s)):
     letter_name.append(x_li[int(num_name_last_li[k])])
   print("".join(letter_name))
 
-#わからない！！！！！！
+#わからない！！！！！！X
