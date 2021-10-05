@@ -1,17 +1,21 @@
-#最大距離を通るパターンと通らないパターンで距離合計が変わってくる。
+import itertools as iter
+
 n = int(input())
-li = []
-dis_li = []
+town_li = []
 
 for i in range(n):
-  li.append(list(map(i nt, input().split())))
+  li = list(map(int, input().split()))
+  town_li.append(li)
 
-for i in range(n):
-  dis = 0
-  for k in range(i):
-    dis_li.append((((li[i][0] - li[k][0])**2) + ((li[i][1] - li[k][1])**2)) ** 0.5)
+way_li = list(iter.permutations(town_li))
+distance_sum_li = []
 
-max_dis = max(dis_li)
-min_dis = min(dis_li)
+for i in range(len(way_li)):
+  distance_sum = 0
+  for k in range(1, n):
+    distance = (((way_li[i][k][0] - way_li[i][k-1][0]) ** 2) + ((way_li[i][k][1] - way_li[i][k-1][1]) ** 2)) ** 0.5
+    distance_sum += distance
+  distance_sum_li.append(distance_sum)
 
-big_ave = 
+average = sum(distance_sum_li) / len(way_li)
+print(average)
