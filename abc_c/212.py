@@ -5,7 +5,7 @@ A = list(map(int, input().split()))
 B = list(map(int, input().split()))
 ans_li = []
 
-B.append(10*100 * -1)
+B.append(10**100 * -1)
 B.append(10**100)
 
 A_s = sorted(A)
