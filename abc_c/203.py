@@ -1,35 +1,27 @@
-n, k = map(int, input().split())
+N, K = map(int, input().split())
 li = []
-ans = 0
+ans = K
+max_city = K
+now = 0
 
-for i in range(n):
-  li_ab = list(map(int, input().split()))
-  li.append(li_ab)
+for i in range(N):
+    ab_li = list(map(int, input().split()))
+    li.append(ab_li)
+    max_city += ab_li[1]
 
 li_s = sorted(li)
+print(li_s)
 
-for i in range(n):
-  if k < li_s[i][0]:
-    if i == n-1:
-      ans += k
-    else:
-      if li_s[i][0] != li_s[i+1][0]:
-        ans += k
+for i in range(N):
+    if K < li_s[i][0] - ans:
+        ans += K
         print(ans)
+        print("途中で死にました")
         exit()
-      else:
-        k -= (li_s[i][0] - li_s[i-1][0])
-        k += li_s[i][1]
-        ans = li_s[i][0]
-  else:
-    if i == 0:
-      k -= li_s[i][0]
-      k += li_s[i][1]
-      ans = li_s[i][0]
     else:
-      k -= (li_s[i][0] - li_s[i-1][0])
-      k += li_s[i][1]
-      ans = li_s[i][0]
+        ans = li_s[i][0]
+        K -= li_s[i][0]
+        K += li_s[i][1]
+        print(str(i) + ":" + str(K))
 
-print(ans + k)
-  
+print(max_city)
