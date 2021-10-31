@@ -1,5 +1,4 @@
-# 素因数分解してリストで返す
-def prime_factorize(n):
+def prime_factorize(n):  # 素因数分解してリストで返す
     a = []
     while n % 2 == 0:
         a.append(2)
@@ -16,9 +15,19 @@ def prime_factorize(n):
     return a
 
 
-def output_devisors(num):  # 約数をリストで返す
-    divisors = []
-    for i in range(1, num+1):
+def divisors_list_h(num):  # 約数をリストとして返す
+    divisors = [1]
+    if num == 1:
+        return divisors
+    for i in range(2, num//2+1):
         if num % i == 0:
             divisors.append(i)
+    divisors.append(num)
     return divisors
+
+
+def manhattan_distance(point_a, point_b):  # xy座標における二点間のマンハッタン距離を求める
+    import numpy as np
+    a = np.array(point_a)
+    b = np.array(point_b)
+    return(np.linalg.norm(a-b, ord=1))
