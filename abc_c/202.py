@@ -1,17 +1,21 @@
-n = int(input())
+N = int(input())
 A = list(map(int, input().split()))
 B = list(map(int, input().split()))
 C = list(map(int, input().split()))
-bcj = [0] * n
+B_Cn_li = []
+count_x = [0] * N
+count_A = [0] * N
+ans = 0
 
-for f in range(n):
-  tmp = B[C[j]-1]
-  bcj.append(tmp)
+for j in range(N):
+    B_Cj = B[C[j]-1] - 1
+    count_x[B_Cj] += 1
 
-  a = collections.Counter(A)
+for i in range(N):
+    A_i = A[i] - 1
+    count_A[A_i] += 1
 
-  ans = 0
-  for i in range(len(bcj)):
-    ans += a[bcj[i]]
+for i in range(N):
+    ans += count_x[i] * count_A[i]
 
 print(ans)
