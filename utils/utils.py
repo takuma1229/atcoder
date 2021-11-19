@@ -31,3 +31,7 @@ def manhattan_distance(point_a, point_b):  # xy座標における二点間のマ
     a = np.array(point_a)
     b = np.array(point_b)
     return(np.linalg.norm(a-b, ord=1))
+
+
+def permutations_count(n, r):  # nつからrつを選んで並べる順列の数
+    return math.factorial(n) // math.factorial(n - r)
