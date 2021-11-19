@@ -1,4 +1,4 @@
-li = [1, 2, 3, 4, 5]
-li = list(map(lambda x: x+1, li))
-
-print(li)
+num = "23"
+num = num.zfill(4)
+num = list(num)
+print(num)
