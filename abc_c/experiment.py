@@ -1,4 +1,7 @@
-num = "23"
-num = num.zfill(4)
-num = list(num)
-print(num)
+ans = []
+ans.append(False * False)
+ans.append(False * True)
+ans.append(True * True)
+ans.append(True * True * False)
+
+print(ans)
