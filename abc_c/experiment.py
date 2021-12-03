@@ -1,7 +1,3 @@
-ans = []
-ans.append(False * False)
-ans.append(False * True)
-ans.append(True * True)
-ans.append(True * True * False)
+ans = 5 // 2
 
 print(ans)

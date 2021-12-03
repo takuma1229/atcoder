@@ -11,7 +11,7 @@ def binary_search(data, value):
         elif data[mid] < value:
             # 中央の値より大きい場合は探索範囲の左を変える
             left = mid + 1
-        else:
+        elif data[mid] > value:
             # 中央の値より小さい場合は探索範囲の右を変える
             right = mid - 1
     return -1            # 見つからなかった場合
