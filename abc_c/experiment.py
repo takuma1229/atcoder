@@ -1,3 +1,3 @@
-ans = 5 // 2
+li = ["abf", "dijf"]
 
-print(ans)
+print(li[1][1])
