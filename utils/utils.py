@@ -35,3 +35,7 @@ def manhattan_distance(point_a, point_b):  # xy座標における二点間のマ
 
 def permutations_count(n, r):  # nつからrつを選んで並べる順列の数
     return math.factorial(n) // math.factorial(n - r)
+
+
+def unique_multi_dim_list(list):
+    return list(map(list, set(map(tuple, list))))

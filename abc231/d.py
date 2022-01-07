@@ -17,7 +17,7 @@ for i in range(M):
     query_list.append(sm_li)
 
 query_list = list(map(list, set(map(tuple, query_list))))
-print(query_list)
+# print(query_list)
 # def get_duplicate_list(seq):
 #     seen = []
 #     return [x for x in seq if not seen.append(x) and seen.count(x) == 2]
