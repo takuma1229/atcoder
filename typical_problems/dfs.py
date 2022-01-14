@@ -1,4 +1,5 @@
 # 再帰関数を使った実装
+# sysを使っているため、python3で提出する！！！！！！！！！！！
 
 import sys
 sys.setrecursionlimit(10**7)  # 再帰関数の呼び出し制限
@@ -21,6 +22,7 @@ def dfs(x, y):
     dfs(x, y-1)
 
 
+# スタート位置を探索する。
 for i in range(h):
     for j in range(w):
         if c[i][j] == "s":
