@@ -1,9 +1,5 @@
-li = [[1, 2], [1, 2]]
+w = 10
+h = 10
 
-
-def unique_multi_dim_list(item):  # 多次元リストをユニーク化する
-    list_u = list(map(list, set(map(tuple, item))))
-    return(list_u)
-
-
-print(unique_multi_dim_list(li))
+ans = [[0 for i in range(w)]for j in range(h)]
+print(ans)
