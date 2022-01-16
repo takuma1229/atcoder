@@ -1,5 +1,8 @@
-w = 10
-h = 10
+N = 10000000000
 
-ans = [[0 for i in range(w)]for j in range(h)]
-print(ans)
+grid = [["."]*N] * (N)
+
+grid[1][3] = "#"
+
+print(grid[3])
+print(len(grid))
