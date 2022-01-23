@@ -1,6 +1,6 @@
 # スタックを使った実装
 
-import sys
+# import sys
 h, w = map(int, input().split())
 c = [list(input()) for i in range(h)]
 
@@ -26,6 +26,7 @@ while stack:
             stack.append([nx, ny])  # スタックに現在位置をpush
     if visited[gx][gy] == 1:
         print("Yes")
-        sys.exit()
+        # sys.exit()
+        exit()
 
 print("No")
