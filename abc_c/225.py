@@ -11,6 +11,13 @@ N, M = map(int, input().split())
 matrix = []
 [matrix.append(list(map(int, input().split()))) for i in range(N)]
 
+if N == 1 and M == 1:
+    print("Yes")
+    exit()
+elif N == 1:
+    for i in range(1, M):
+        matrix[0][i] - matrix[0][i-1]
+
 past_row = matrix[0]  # 最初の行
 past_value = matrix[0][0]  # 最初の値
 
