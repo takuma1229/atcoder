@@ -4,25 +4,28 @@ N = int(input())
 S = input()
 S = list(S)
 Q = int(input())
-flip = False
+# print(S)
+left = S[:N]
+right = S[N:]
+L = [left, right]
+
 
 for i in range(Q):
     T, A, B = map(int, input().split())
     if T == 1:
-        if not flip:
-            S[A-1], S[B-1] = S[B-1], S[A-1]
-        else:
-            S[len(S)-(A-1)-1], S[len(S)-(B-1) -
-                                 1] = S[len(S)-(B-1)-1], S[len(S)-(A-1)-1]
+        # S = list(S)
+        S = list(itertools.chain.from_iterable(L))
+        S[A-1], S[B-1] = S[B-1], S[A-1]
+        left = S[:N]
+        right = S[N:]
+        L = [left, right]
+        # S = "".join(S)
     else:
-        if flip:
-            flip = False
-        else:
-            flip = True
+        left = S[:N]
+        right = S[N:]
+        L = [left, right]
+        L[0], L[1] = L[1], L[0]
+        # S = "".join(L)
+    # print(S)
 
-
-if flip:
-    S[:N], S[N:] = S[N:], S[:N]
-    print("".join(S))
-else:
-    print("".join(S))
+print("".join(list(itertools.chain.from_iterable(L))))

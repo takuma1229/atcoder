@@ -1,11 +1,4 @@
-import copy
-
-li = [1, 2, 3]
-li_c = copy.deepcopy(li)
-
-print(li_c)
-
-li_c[0] = 100000
-
+li = [1, 2, 3, 4, 5]
+li_a = li[2:]
+li_a = list(map(lambda x: x+2, li_a))
 print(li)
-print(li_c)
