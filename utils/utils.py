@@ -45,5 +45,5 @@ def unique_multi_dim_list(list):
     return list(map(list, set(map(tuple, list))))
 
 
-def calculate_gcd(num_list: list) -> int:
+def gcd(num_list: list[int]) -> int:
     return reduce(gcd, num_list)
