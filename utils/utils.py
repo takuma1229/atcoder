@@ -1,5 +1,7 @@
+import math
 from math import gcd
 from functools import reduce
+import numpy as np
 
 
 def prime_factorize(n):  # 素因数分解してリストで返す
@@ -31,7 +33,6 @@ def divisors_list_h(num):  # 約数をリストとして返す
 
 
 def manhattan_distance(point_a, point_b):  # xy座標における二点間のマンハッタン距離を求める
-    import numpy as np
     a = np.array(point_a)
     b = np.array(point_b)
     return(np.linalg.norm(a-b, ord=1))
@@ -45,5 +46,5 @@ def unique_multi_dim_list(list):
     return list(map(list, set(map(tuple, list))))
 
 
-def gcd(num_list: list[int]) -> int:
+def calculate_gcd(num_list: list) -> int:
     return reduce(gcd, num_list)
